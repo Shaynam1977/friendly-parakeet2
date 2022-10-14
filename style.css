@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #153669;
 }
 
 .wrapper {
@@ -27,19 +27,41 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(206, 100%, 1%);
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
+  background-color: hsl(0, 43%, 70%);
+  border-radius: 1rem;
+  border: 2px solid black;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form{
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2rem;
 }
 
 .card-header::after {
@@ -48,12 +70,31 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
 }
 
 .card-body {
   min-height: 100px;
 }
 
+.password-display {
+  background-color: white;
+  color: black;
+  padding: 1 rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: .5rem;
+
+}
 .card-footer {
   text-align: center;
 }
@@ -89,7 +130,7 @@ header {
 }
 
 button[disabled] {
-  cursor: default;
+  cursor: pointer;
   background: #c0c7cf;
 }
 
