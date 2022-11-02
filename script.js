@@ -155,22 +155,28 @@ function generatePassword(){
     storedPass[i]= garanteedOutCome[i]
   }
   console.log(storedPass)
+
+  // returned string becomes value of password veriable in
+  // writePassword function
   return storedPass.join('')
   
 
 }
 // Assignment Code
+// generateBtn ver to target the generateId in html
 var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button that runs the writePassword
+// btn
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
   
+  // password is set equal to return generate password function
   var password = generatePassword();
+  // documnet targeting html text area that has Id of password
   var passwordText = document.querySelector("#password");
-
+  // set text area value to the return gereate value from password function
   passwordText.value = password;
-
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
