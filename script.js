@@ -123,44 +123,48 @@ var passWordOptions = {
   hasLowerCaseCharacters: hasLowerCaseCharacters,
 }
 console.log(passWordOptions)
+// the return makes password options usable outside of this function 
 return passWordOptions
 }
 
 function getRandom(arr){
-  var randIndex = Math.floor(Math.random()*arr.length)
-  var randElement = arr[randIndex]
+  var randIndex = Math.floor(Math.random()*arr.length) //returns random index
+  //based on array length
+  var randElement = arr[randIndex] //converts random index to its ture character
+  // value
+  //randElement returnd the true value
   return randElement
 }
-
+// getRandom(lowerCase)
 function generatePassword(){
+  // options variable to grab user answers object from getPassword options
   var options =  getPasswordOptions()
+  // array to store random characters for our final password 
   var storedPass =[]
+  // character pool to store any potential characters that can be stored
+  //into our storePass array
   var possibleOutComes =[]
-  var garanteedOutCome =[]
-  if(!options)return null
-  if(options.hasSpecialCharacters){
+  // take responces from optionsObject if ture concat(combine) corasponding 
+  // array into our possible outcomes array
+  if(options.hasSpecialCharacters ===true){
     possibleOutComes = possibleOutComes.concat(specialCharacters)
-    garanteedOutCome.push(getRandom(specialCharacters))
   }
-  if (options.hasNumericCharacters){
+  if (options.hasNumericCharacters ===true){
     possibleOutComes = possibleOutComes.concat(numericCharacters)
-    garanteedOutCome.push(getRandom(numericCharacters))
   }
-  if (options.hasLowerCaseCharacters){
+  if (options.hasLowerCaseCharacters ===true){
     possibleOutComes = possibleOutComes.concat(lowerCase)
-    garanteedOutCome.push(getRandom(lowerCase))
   }
-  if (options.hasUpperCaseCharacters){
+  if (options.hasUpperCaseCharacters ===true){
     possibleOutComes = possibleOutComes.concat(upperCase)
-    garanteedOutCome.push(getRandom(upperCase))
   }
-
+  // run as many times as they chose 
   for(var i=0; i<options.length; i++){
+    // get single random character from possible outcomes array
     var possibleCharacter = getRandom(possibleOutComes)
+    // push (place) the random character to our stored pass array
     storedPass.push(possibleCharacter)
-  }
-  for(var i=0; i<garanteedOutCome.length; i++){
-    storedPass[i]= garanteedOutCome[i]
+    console.log(storedPass)
   }
   console.log(storedPass)
 
