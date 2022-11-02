@@ -105,7 +105,7 @@ function getPasswordOptions(){
   var hasNumericCharacters = confirm("click okay to include numbers")
   var hasUpperCaseCharacters = confirm("click okay to include uppercase letters")
   var hasLowerCaseCharacters = confirm("click okay to include lowercase letters")
-
+  // validation to make sure that at least one character type is selected 
   if(
     hasSpecialCharacters ===false && hasNumericCharacters === false &&
     hasUpperCaseCharacters ===false && hasLowerCaseCharacters === false 
@@ -113,7 +113,8 @@ function getPasswordOptions(){
     alert("oops! make a selection")
     return null
   }
-
+// password options object to take in user answers and make available to make
+// outside user prompt function 
 var passWordOptions = {
   length:length, 
   hasSpecialCharacters: hasSpecialCharacters,
@@ -121,6 +122,7 @@ var passWordOptions = {
   hasUpperCaseCharacters: hasUpperCaseCharacters,
   hasLowerCaseCharacters: hasLowerCaseCharacters,
 }
+console.log(passWordOptions)
 return passWordOptions
 }
 
