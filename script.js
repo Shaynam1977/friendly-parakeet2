@@ -1,3 +1,5 @@
+// character arrays that provide potential characters that 
+// can be used in our function for final password
 var specialCharacters = ['@',
 '%',
 '+',
@@ -79,9 +81,11 @@ var lowerCase = [
   'y',
   'z'
 ];
-
+// function to get user input on password length and character types
+// that they might want to use
 function getPasswordOptions(){
-
+  // prompt user for password length and validate if the asnswer is a number
+  // and between 8-128 characters
   var length = parseInt( prompt("what Number of charaters whould you like?") )
   if(Number.isNaN(length)){
     alert("oops! Enter a number.")
@@ -95,6 +99,8 @@ function getPasswordOptions(){
     alert("oops! Number must be lwer than 128.")
     return null
   }
+  // confirms to evaluate what character types the user might want in their 
+  // password, returns a true or a false 
   var hasSpecialCharacters = confirm("click okay to include special characters")
   var hasNumericCharacters = confirm("click okay to include numbers")
   var hasUpperCaseCharacters = confirm("click okay to include uppercase letters")
